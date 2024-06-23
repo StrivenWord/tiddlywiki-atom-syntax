@@ -1,10 +1,64 @@
-'scopeName': 'source.mylanguage'
-'name': 'MyLanguage'
-'fileTypes': ['ext1', 'ext2']
+'scopeName': 'source.tiddlywiki'
+'name': 'TiddlyWiki'
+'fileTypes': ['tid', 'tiddler']
 'patterns': [
+  # Macros
   {
-    'match': '\\b(keyword1|keyword2|keyword3)\\b'
-    'name': 'keyword.control.mylanguage'
+    'match': '<<[^>]+>>'
+    'name': 'macro.tiddlywiki'
   }
-  # Add more patterns here
+  # Widgets
+  {
+    'begin': '<\\$[a-zA-Z]+'
+    'end': '/?>'
+    'name': 'widget.tiddlywiki'
+    'patterns': [
+      {
+        'match': '\\$[a-zA-Z]+'
+        'name': 'widget-name.tiddlywiki'
+      }
+      {
+        'match': '\\b[a-zA-Z-]+="[^"]*"'
+        'name': 'widget-attribute.tiddlywiki'
+      }
+    ]
+  }
+  # Wikitext Formatting
+  {
+    'match': "''[^']+''"
+    'name': 'bold.tiddlywiki'
+  }
+  {
+    'match': '//[^/]+//'
+    'name': 'italic.tiddlywiki'
+  }
+  {
+    'match': '__[^_]+__'
+    'name': 'underline.tiddlywiki'
+  }
+  {
+    'match': '\\^\\^[^^]+\\^\\^'
+    'name': 'superscript.tiddlywiki'
+  }
+  {
+    'match': ',,[^,]+,,'
+    'name': 'subscript.tiddlywiki'
+  }
+  {
+    'match': '~~[^~]+~~'
+    'name': 'strikethrough.tiddlywiki'
+  }
+  {
+    'match': '`[^`]+`'
+    'name': 'code.tiddlywiki'
+  }
+  # Links
+  {
+    'match': '\\[\\[[^\\]]+\\]\\]'
+    'name': 'link.tiddlywiki'
+  }
+  {
+    'match': '\\b[A-Z][a-z]+[A-Z][a-z]+\\b'
+    'name': 'camelcase-link.tiddlywiki'
+  }
 ]
