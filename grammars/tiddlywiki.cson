@@ -1,0 +1,10 @@
+'scopeName': 'source.mylanguage'
+'name': 'MyLanguage'
+'fileTypes': ['ext1', 'ext2']
+'patterns': [
+  {
+    'match': '\\b(keyword1|keyword2|keyword3)\\b'
+    'name': 'keyword.control.mylanguage'
+  }
+  # Add more patterns here
+]
